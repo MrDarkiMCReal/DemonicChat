@@ -59,6 +59,7 @@ public class Tag {
 
         for (String s : hoverMessage) {
             s = s + "\n";
+
             TextComponent component = new TextComponent();
             Pattern pattern = Pattern.compile("&#[0-9A-Fa-f]{6}");
             //&#FF2733Клан игрока:#2F5737 SATANIC splitted will be &#FF2733Клан игрока:#2F5737 SATANIC
