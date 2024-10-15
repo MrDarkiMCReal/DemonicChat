@@ -15,3 +15,4 @@ public class AsyncChatSender implements Listener {
         }.runTaskAsynchronously(DemonicChat.getInstance());
     }
 }
+

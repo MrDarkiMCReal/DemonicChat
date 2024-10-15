@@ -74,6 +74,3 @@ tags:
     click-event:
       type: "RUN_COMMAND"
       output: "report {player} {message} {time}"
-
-
-
