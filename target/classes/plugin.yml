@@ -1,0 +1,7 @@
+name: DemonicChat
+version: '1.0'
+main: org.mrdarkimc.demonicchat.DemonicChat
+api-version: '1.21'
+softdepend:
+  - Vault
+  - PlaceholdersAPI

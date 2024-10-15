@@ -1,0 +1,79 @@
+settings:
+  enable-tag-mode: true
+  default-chat-formatting: "" ##PAPI
+  global-char: "!"
+tag-builders:
+  default: *
+  local-chat: "prefix,playername,suffix,clan,message" #triggers without any symbol
+  global-chat: "global,prefix,playername,suffix,clan,message" #triggers only with "global-char"
+tags:
+  global:
+    text: "%symbol%"
+    hover-event:
+      text:
+        - "Глобальный чат"
+        - "! - для глобального чата"
+    click-event:
+      type: "OPEN_URL"
+      #   OPEN_URL,
+      #   OPEN_FILE,
+      #   RUN_COMMAND,
+      #   SUGGEST_COMMAND,
+      #   CHANGE_PAGE,
+      #   COPY_TO_CLIPBOARD
+      output: "https://discord.gg/...."
+  prefix:
+    text: "%prefix%"
+    hover-event:
+      text:
+        - "Нажмите, что бы посмотреть профиль игрока"
+        - "Быстрая статистика: "
+        - "Клан: %clanname%"
+        - "Группа доната: %donategroup%"
+    click-event:
+      type: "RUN_COMMAND"
+      output: "profile %player%"
+  playername:
+    text: "%playername%"
+    hover-event:
+      text:
+        - "Нажмите, что бы посмотреть профиль игрока"
+        - "Быстрая статистика: "
+        - "Клан: %clanname%"
+        - "Группа доната: %donategroup%"
+    click-event:
+      type: "RUN_COMMAND"
+      output: "profile %player%"
+  suffix:
+    text: "%suffix%"
+    hover-event:
+      text:
+        - "Нажмите, что бы посмотреть профиль игрока"
+        - "Быстрая статистика: "
+        - "Клан: %clanname%"
+        - "Группа доната: %donategroup%"
+    click-event:
+      type: "RUN_COMMAND"
+      output: "profile %player%"
+  clan:
+    text: "%clan%"
+    hover-event:
+      text:
+        - "Клан: %clanname%"
+        - "КД клана: %clan_kd%"
+        - ""
+        - "Нажмите, что бы посмотреть профиль клана"
+    click-event:
+      type: "RUN_COMMAND"
+      output: "clan view %player%"
+  message:
+    text: "{message}"
+    hover-event:
+      text:
+        - "Нажмите, что бы зарепортить сообщение"
+    click-event:
+      type: "RUN_COMMAND"
+      output: "report {player} {message} {time}"
+
+
+

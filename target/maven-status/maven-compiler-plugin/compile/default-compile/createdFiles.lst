@@ -1,0 +1,9 @@
+org\mrdarkimc\demonicchat\hooks\PlaceholdersAPIHook.class
+org\mrdarkimc\demonicchat\DemonicChat.class
+org\mrdarkimc\demonicchat\utils\Utils.class
+org\mrdarkimc\demonicchat\chat\AsyncChatSender.class
+org\mrdarkimc\demonicchat\hooks\VaultHook.class
+org\mrdarkimc\demonicchat\chat\ChatEvent.class
+org\mrdarkimc\demonicchat\chat\ChatEvent$PlayerGroup.class
+org\mrdarkimc\demonicchat\chat\AsyncChatSender$1.class
+org\mrdarkimc\demonicchat\utils\Config.class
