@@ -7,19 +7,28 @@ import org.mrdarkimc.demonicchat.DemonicChat;
 import java.io.File;
 
 public class Config {
-    static File configFile;
-    static FileConfiguration config;
-    private static void loadConfig() {
+
+public Config(){
+    //getInstance = this;
+    loadConfig();
+}
+    public static Config getInstance;
+    private File configFile;
+    private FileConfiguration config;
+    private void loadConfig() {
         configFile = new File(DemonicChat.getInstance().getDataFolder(), "config.yml");
         if (!configFile.exists()) {
             DemonicChat.getInstance().saveResource("config.yml", false);
         }
         config = YamlConfiguration.loadConfiguration(configFile);
     }
-    public static FileConfiguration getConfig(){
+    public FileConfiguration getConfig(){
         if (configFile==null){
             loadConfig();
         }
         return config;
+    }
+    public void reload(){
+        loadConfig();
     }
 }
