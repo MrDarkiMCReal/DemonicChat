@@ -8,7 +8,6 @@ import net.md_5.bungee.api.chat.hover.content.Content;
 import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.entity.Player;
 
-import java.nio.file.StandardWatchEventKinds;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -24,7 +23,7 @@ public class Tag {
     private HoverEvent hoverEvent;
     private List<String> hoverMessage;
 
-    public TextComponent getComponent() { //todo text заменить на парсинг с PAPI, для того, что бы можно было применять плейсхолдеры
+    public TextComponent getComponent() {
         component = translateComponentHex(text);
         //component.addExtra(text.isEmpty() ? "" : text);
         if (clickEvent != null) {
@@ -38,7 +37,11 @@ public class Tag {
 
     public Tag(Player player, String text) {
         this.player = player;
-        this.text = text;
+        this.text = PlaceholderAPI.setPlaceholders(player,text);
+    }
+
+    public String getText() {
+        return text;
     }
 
     public Tag(Player player, String text, ClickEvent.Action action, String actionValue) {
@@ -130,6 +133,7 @@ public static ArrayList<Content> stringListToContentList(List<String> hoverMessa
             String textWithoutHex = matcher.group(2);
             TextComponent comp = new TextComponent(textWithoutHex);
             comp.setColor(ChatColor.of(hex));
+            component.setColor(ChatColor.of(hex));//add last coloring to main text component. then calls a stackText components. thats how
             component.addExtra(comp);
 
             lastMatchEnd = matcher.end();
